@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-exposer-deploy
+  labels:
+    app: metrics-exposer-deploy
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: metrics-exposer
+  template:
+    metadata:
+      labels:
+        app: metrics-exposer
+    spec:
+      containers:
+      - name: metrics-exposer
+        image: {{ .Values.deployment.image }}
+        ports:
+        - containerPort: {{ .Values.deployment.containerPort }}

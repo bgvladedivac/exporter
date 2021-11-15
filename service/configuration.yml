@@ -1,0 +1,10 @@
+urls:
+        - https://httpstat.us/503
+        - https://httpstat.us/200
+metrics:
+  - name: sample_external_url_up
+    type: gauge
+    docs: tracks http status code 200, 1 for true, 0 for false 
+  - name: sample_external_url_response_ms
+    type: gauge
+    docs: tracks response http time

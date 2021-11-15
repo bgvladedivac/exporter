@@ -1,0 +1,13 @@
+# Default values for service.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  image: "" # Provide the dockerRegistry:imageTag
+  containerPort: 5004
+  replicas: 1
+
+service:
+  port: 5004
+  type: ClusterIP
+
